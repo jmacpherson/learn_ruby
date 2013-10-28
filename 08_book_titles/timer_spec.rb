@@ -42,16 +42,16 @@ describe "Timer" do
   # This helper method would be called by time_string.
   # Uncomment these specs if you want to be tested for this helper method.
   #
-  # describe 'padded' do
-  #   it 'pads zero' do
-  #     @timer.padded(0).should == '00'
-  #   end
-  #   it 'pads one' do
-  #     @timer.padded(1).should == '01'
-  #   end
-  #   it "doesn't pad a two-digit number" do
-  #     @timer.padded(12).should == '12'
-  #   end
-  # end
+  describe 'padded' do
+    it 'pads zero' do
+      @timer.padded(0).should == '00'
+    end
+    it 'pads one' do
+      @timer.padded(1).should == '01'
+    end
+    it "doesn't pad a two-digit number" do
+      @timer.padded(12).should == '12'
+    end
+  end
 
 end
