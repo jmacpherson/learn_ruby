@@ -25,9 +25,14 @@ end
 def titleize(string)
   if !(string.include?(' '))
     return string.capitalize
-  elsif string.include?(' ')
+  else
     words = string.split(' ')
     words = words.map { |w| w.capitalize! }
-    
+    title = words.shift
+    words = words.map do |w|
+      w.downcase! if w == "The" || w == "And"
+      title << " #{w}"
+    end
+    return title
   end
 end
