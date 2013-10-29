@@ -1,6 +1,6 @@
 class RPNCalculator
   attr_reader :value
-  DIGITS = ["1","2","3","4","5","6","7","8","9"]
+  DIGITS = %w(1 2 3 4 5 6 7 8 9)
   OPERATORS = ["*","+","/","-"]
 
   def initialize
@@ -34,7 +34,6 @@ class RPNCalculator
     end
     n2 = @queue.pop.to_f
     n1 = @queue.pop.to_f
-    # return @value = @value.to_f / @queue.pop.to_f if @queue.length == 1
     return @value = n1 / n2
   end
 
@@ -66,14 +65,11 @@ class RPNCalculator
       elsif token == :*
         @value = times
       elsif token == :/
-        puts @value
         @value = divide
       elsif token == :-
         @value = minus
-        p @value
       elsif token == :+
         @value = plus
-        p @value
       end
     end
     return @value
